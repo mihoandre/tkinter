@@ -1,43 +1,27 @@
 from tkinter import*
+foablak = Tk()
 
-foablak=Tk()
-foablak.title("Foki Zoltán")
-foablak.minsize(width=300, height=100)
+menubar = Menu(foablak)
+filemenu = Menu(menubar, tearoff=0)
+menu = Menu(menubar, tearoff=0)
+menubar.add_cascade(label="BMI Kalkulátor", menu=menu)
+menubar.add_cascade(label="Edzésterv", menu=menu)
+menubar.add_cascade(label="Étrend", menu=menu)
+menubar.add_cascade(label="Kalória deficit", menu=menu)
+menubar.add_cascade(label="Szteroid", menu=menu)
 
-menusor=Frame(foablak)
-menusor.place(x=5, y=0)
+foablak.config(menu=menubar)
 
-menu1=Menubutton(menusor, text="BMI kalkulátor")
-menu1.place(x=5, y=0)
-a=Menu(menu1)
-menu1.config(menu=a)
+txt1 = Label(foablak, text="Fitness")
+txt2 = Label(foablak, text="Üdvözöljük az oldalunkon, reméljük a segítségére lehetünk.")
 
-menu2=Menubutton(menusor, text="Edzésterv")
-menu2.place(x=5, y=0)
-b=Menu(menu2)
-menu2.config(menu=b)
 
-menu3=Menubutton(menusor, text="Étrend")
-menu3.place(x=5, y=0)
-c=Menu(menu3)
-c.add_command(label="Documents")
-c.add_command(label="Messages")
-c.add_command(label="Sign Out")
-menu3.config(menu=c)
-
-menu4=Menubutton(menusor, text="Kalória deficit")
-menu4.place(x=5, y=0)
-d=Menu(menu4)
-menu4.config(menu=d)
-
-menu5=Menubutton(menusor, text="Szteroid")
-menu5.place(x=5, y=0)
-e=Menu(menu5)
-menu5.config(menu=e)
-
-can1=Canvas(foablak, width=500, height=500, bg="white")
-photo=PhotoImage(file="Főoldalkép.png")
+can1=Canvas(foablak, width=500, height=500,)
+photo=PhotoImage(file="fooldal.png")
 item=can1.create_image(250,250, image=photo)
-can1.place(height=3, width=4, anchor="center", relx=10, rely=5)
+can1.grid(row=5, column=3, rowspan=5, padx=10, pady=10)
+ 
+txt1.grid(row=0, column=3,)
+txt2.grid(row=1, column=3)
 
 foablak.mainloop()
