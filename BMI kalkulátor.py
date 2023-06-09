@@ -10,6 +10,7 @@ def bmikalk():
     
 
 bmiabl=Tk()
+bmiabl.geometry("1000x400")
 
 txt1=Label(bmiabl, text="Testtömeg index (BMI) kalkulátor")
 txt2=Label(bmiabl, text="Kérem jelölje be a nemét:")
@@ -29,9 +30,9 @@ mezo4=Entry(bmiabl)
 mezo5=Entry(bmiabl)
 gomb1=Button(bmiabl, text="Kattintos erre a gombra, hogy megkapja testömeg indexét!", command=bmikalk)
 
-canvas = Canvas(bmiabl, width = 300, height = 300)
-bmikep=PhotoImage(file="bmi-kalkulator.png")      
-canvas.create_image(250,250, anchor=NW, image=bmikep)
+bmikep=PhotoImage(file="bmi-kalkulator kicsinített.png")
+label=Label(bmiabl, image=bmikep)
+label.place(width=300, height=100, x=450, y=10)
 
 txt1.grid(row=1, column=2)
 txt2.grid(row=2, column=1)
